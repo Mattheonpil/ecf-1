@@ -1,0 +1,629 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ol, ul {
+	list-style: none;
+}
+            /* début couleurs */
+
+            /* couleur titre : #FFFFFF */
+            /* background menus : #C4BCBC */
+            /* background click menus : #C4D0DA */
+            /* couleur police : #000000 */
+            /* couleur click police : #143378 */
+            /* couleur fond : #F8F8F8 */
+            /* couleur fond footer : #5E5555 */
+
+            /* fin couleurs */
+
+
+
+            
+            /* début polices */
+
+                /* titre site: font-family: "Londrina Solid", sans-serif; */
+                @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+                /* site: font-family: "Sour Gummy", sans-serif; */
+                @import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Londrina+Solid:wght@100;300;400;900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Dots&display=swap');
+
+
+            /* fin polices */
+
+
+
+            /* début variables */
+:root {
+                /* couleurs : */
+    --white: #FFFFFF;
+    --bg-menu: #c4bcbc;
+    --bg-menu-tr: rgb(196, 188, 188, 0.8);
+    --bg-cl-menu: #C4D0DA;
+    --bg-cl-trans: #4781b0;
+    --bg-articles : #f5f4f4;
+    --couleur-police: #000000;
+    --couleur-cl-police: #143378;
+    --couleur-fond: #F8F8F8;
+    --couleur-fd-footer: #b1adad;
+    
+                /* polices */
+    --font-titre: "Londrina Solid", sans-serif;
+    --font-gnl: "Sour Gummy", sans-serif;
+    --txt-upper : uppercase;
+            --fs-titre: 4rem;
+            --fs-sstitre: 1.5rem;
+            --fs-text: 1rem;
+
+            --fw-titre: 900;
+            --fw-sstitre: 300;
+            --fw-ssstitre : 600;
+            --fw-text: 200;
+
+                /* effets */
+    --shadow: 0 0 1rem #C4BCBC;
+    --br: 40px;
+    --border: 3px solid var(--bg-cl-menu);
+
+    --spacer-demi: calc(var(--spacer)*.4);
+    --spacer: 1rem;
+    --spacer2: calc(var(--spacer)*2);
+    --spacer3: calc(var(--spacer)*3);
+    --spacer-bandeau : calc(var(--spacer)*25);
+    --slide-radius : 1rem;
+
+
+}
+            /* fin variables */
+
+          
+
+            /* début header */
+body {
+    font-family: var(--font-gnl);
+    font-size: var(--fs-text);
+    color: var(--couleur-police);
+    font-weight: var(--fw-text);
+}
+
+
+
+@media (max-width: 992px) {
+    body  {        
+        font-size: 0.8rem;        
+    }
+}
+@media (max-width: 768px) {
+    body  {
+        font-size: 0.5rem;
+    }
+}
+header {
+    background-image: url(../img/bandeau1440p.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;    
+}
+
+.logo {
+    padding-right: 80px;
+    margin-top: var(--spacer3);    
+}
+@media (max-width: 992px) {
+    .logo {
+        padding-right: 40px;
+        margin: var(--spacer2);
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+            padding-right: 10px;
+            margin: var(--spacer1);
+            
+}
+}
+
+#site {
+    font-family: var(--font-titre);
+    font-weight: var(--fw-titre);
+    font-size: var(--fs-titre);
+    color: var(--white);
+    margin-top: var(--spacer3);   
+}
+
+@media (max-width: 992px) {
+    #site {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 768px) {
+    #site {
+        font-size: 2rem;
+    }
+}
+
+.menu { 
+     
+    background: var(--bg-menu-tr);     
+}
+
+.menu ul {
+    display: flex;       
+}
+
+.menu ul li a {
+    display: block;
+    padding: 0 .5rem;
+    text-decoration: none;
+    color: var(--couleur-police);
+    font-family: var(--font-gnl);
+    font-size: var(--fs-text);
+    line-height: 2rem;
+    text-transform: var(--txt-upper);  
+}
+
+@media (max-width: 992px) {
+    .menu ul li a  {
+        line-height: 1.5rem;        
+        font-size: 0.6rem;        
+    }
+}
+@media (max-width: 768px) {
+    .menu ul li a  {
+        font-size: 1.5rem;
+    }
+}
+
+.menu ul li:hover a {
+    color: var(--couleur-cl-police);
+    background: var(--bg-cl-menu);
+    
+}
+
+.en-cours {
+    color: var(--couleur-cl-police);
+    background: var(--bg-cl-menu);
+}
+
+
+            
+            /* fin header */
+
+            /* début main */
+
+.flex-section {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    
+
+    
+}.flex-section > p {
+    max-width: 60%;
+    margin: var(--spacer3) auto;   
+}
+
+.flex-section > h2 {
+    text-transform: var(--txt-upper);
+    font-size: var(--fs-sstitre);
+    font-weight: var(--fw-sstitre);
+    margin-bottom: var(--spacer3);
+    
+}
+
+@media (max-width: 992px) {
+    .flex-section h2  {        
+        font-size: 1.2rem;        
+    }
+}
+@media (max-width: 768px) {
+    .flex-section h2  {
+        font-size: 1rem;
+    }
+}
+
+.flex-section2 {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    text-transform: var(--txt-upper);
+    font-size: var(--fs-sstitre);
+    font-weight: var(--fw-sstitre);
+    margin-top: var(--spacer3);
+    margin-bottom: var(--spacer3);
+
+}
+
+@media (max-width: 992px) {
+    .flex-section2   {        
+        font-size: 1.2rem;        
+    }
+}
+@media (max-width: 768px) {
+    .flex-section2   {
+        font-size: 1rem;
+    }
+}
+
+
+.slider {
+    width: 100%;
+    max-width: 1400px;
+    height: 270px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.slides {
+    display: flex;
+    gap: var(--spacer);
+
+}
+
+.slide {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 270px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: var(--border);
+    border-radius: var(--slide-radius);
+}
+
+@media (max-width: 992px) {
+    .slide   {        
+        width: 340px;
+        height: 230px;        
+    }
+}
+
+
+.slide a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--couleur-police);
+    font-weight: var(--fw-text);
+    background-color: var(--bg-cl-menu);
+    background: var(--bg-menu-tr);
+    line-height: var(--spacer-bandeau);
+    padding: var(--spacer-demi) var(--spacer);
+    margin-left: var(--spacer);
+    border-radius: 16px;   
+}
+
+.slide a:hover {
+    color: var(--couleur-cl-police);
+    background-color: var(--bg-cl-menu);
+}
+
+@media (max-width: 992px) {
+    .slide a  {        
+        line-height: 22rem;       
+    }
+}
+
+
+.sl1 {
+    background-image: url(../img/menu1.webp);
+}
+.sl2 {
+    background-image: url(../img/menu2.webp);
+}
+.sl3 {
+    background-image: url(../img/menu3.webp);
+}
+.sl4 {
+    background-image: url(../img/art7.webp);
+}
+.sl5 {
+    background-image: url(../img/menu9.webp);
+}
+.sl6 {
+    background-image: url(../img/art1.webp);
+}
+.sl7 {
+    background-image: url(../img/menu12.webp);
+}
+.sl8 {
+    background-image: url(../img/menu13.webp);
+}
+.sl9 {
+    background-image: url(../img/menu15.webp);
+}
+.sl10 {
+    background-image: url(../img/mesh1.webp);
+}
+.sl11 {
+    background-image: url(../img/art8.webp);
+}
+
+.sl12 {
+    background-image: url(../img/art5.webp);
+}
+.sl13 {
+    background-image: url(../img/art3.webp);
+}
+.sl14 {
+    background-image: url(../img/art6.webp);
+}
+
+
+.arrow-left, .arrow-right {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    opacity: .5;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    
+}
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+
+
+
+
+
+            /* fin main */
+
+            /* début footer */
+#foot-global {
+    margin-top: var(--spacer3);
+    background-color: var(--couleur-fd-footer);
+    width: 1400px;
+    height: 400px;
+}
+
+
+
+            /* fin footer */
+
+            /* début résistances */
+
+.intro {
+    text-align: center;
+}
+
+.grid-gnl {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(3,1fr); */
+    row-gap: var(--spacer3);
+    column-gap: var(--spacer3);
+    padding-left: 3rem;       
+}
+
+@media (max-width: 992px) {
+    .grid-gnl   {        
+        grid-template-columns: repeat(2, 1fr);          
+    }
+}
+@media (max-width: 768px) {
+    .grid-gnl   {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.grid-gnl article {
+    box-shadow: 0px 0px 20px 8px var(--bg-cl-menu);
+    width: 340px;
+    height: 230px;
+    border-radius: var(--slide-radius);
+    transition: all 0.2s 0.1s ease-in-out;
+}
+
+.grid-gnl article:hover {
+    box-shadow: 0px 0px 20px 8px var(--bg-cl-trans);
+    transform: scale(1.04);
+}
+
+.grid-gnl article a:hover {
+    color: var(--couleur-cl-police);
+    background-color: var(--bg-cl-menu);
+}
+
+.grid-gnl > article > a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--couleur-police);
+    font-weight: var(--fw-text);
+    background-color: var(--bg-cl-menu);
+    background: var(--bg-menu-tr);
+    line-height: var(--spacer-bandeau);
+    padding: var(--spacer-demi) 1rem;
+    margin-left: var(--spacer);
+    border-radius: 16px;
+    transition: all 0.1s 0.2s ease-in-out;
+
+}
+
+                 /* fin résistances */
+
+
+                 /* début les résistances complexes */
+
+.art-titre1 {
+    font-family: var(--font-gnl);
+    font-size: var(--fs-sstitre);
+    font-weight: var(--fw-sstitre);
+    color: var(--couleur-police);
+    margin-top: var(--spacer3);
+    text-transform: var(--txt-upper);
+
+}
+
+@media (max-width: 992px) {
+    .art-titre1, .t1  {        
+        font-size: 1.2rem;       
+    }
+}
+@media (max-width: 768) {
+    .art-titre1, .t1   {        
+        font-size: 1rem;       
+    }
+}
+.art-para {
+    font-family: var(--font-gnl);
+    font-size: var(--fs-text);
+    font-weight: var(--fw-text);
+    color: var(--couleur-police);
+    margin-top: var(--spacer1);
+}
+
+.grille {
+    margin-top: var(--spacer3);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 2fr 1fr;   
+    grid-template-areas:"c a";               
+}
+
+
+
+
+.menu-articles { 
+    line-height: 3rem;
+    grid-area: c;
+    padding-left: var(--spacer);
+    text-transform: var(--txt-upper);
+    text-decoration: none; 
+}
+
+
+
+.menu-articles > nav > ol > li > a {
+    text-decoration: none;
+    color: var(--couleur-police);
+    font-size: var(--fs-text);
+    border: var(--border);
+    border-radius: 40px;
+    padding: var(--spacer-demi) var(--spacer);
+    background-color: var(--bg-menu);  
+}
+
+.menu-articles > nav > ol > li > a:hover {
+    color: var(--couleur-cl-police);
+    background-color: var(--bg-cl-menu);
+}
+
+
+
+.contenu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: max-content;
+    gap: var(--spacer3);
+    justify-items: center;
+    align-items: center;
+    text-align: left;
+    background-color: var(--bg-articles);
+    padding: var(--spacer2) var(--spacer2);
+    grid-template-areas: 
+        "a a"
+        "t b"
+        "c d"
+        "e f"
+        "g h"
+        "i j";
+
+}
+
+.fg {
+    grid-area: a;
+    justify-self: center;    
+}
+
+.fg img{
+    border-radius: var(--br);
+}
+.t1 {
+    grid-area: t;   
+}
+.p1 {
+    grid-area: b;
+}
+.t2 {
+    grid-area: d;
+}
+.p2 {
+    grid-area: c;
+}
+.t3 {
+    grid-area: e;
+}
+.p3 {
+    grid-area: f;
+}
+.t4 {
+    grid-area: h;
+}
+.p4 {
+    grid-area: g;
+}
+.t5 {
+    grid-area: i;
+}
+.p5 {
+    grid-area: j;
+}
+
+.deco-h2 {
+    font-size: var(--fs-sstitre);
+    font-weight: var(--fw-sstitre);
+    text-transform: var(--txt-upper);
+    
+}
+
+.deco-h3 {
+    font-weight: var(--fw-ssstitre);
+    
+}
+
+
+
+
+
+
+
+
+                 /* fin les résistances complexes */
+
+
+
+
+
